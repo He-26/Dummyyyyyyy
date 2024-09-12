@@ -1,0 +1,17 @@
+
+<div *ngIf="questions.length > 0">
+    <h2>Score: {{ score }}</h2>
+  
+    <div *ngFor="let question of questions">
+      <h3>{{ question.questionTitle }}</h3>
+      <ul>
+        <!-- <li *ngIf="question.solution === 'option1.value'">Option 1: {{ question.option1 }}</li>
+        <li *ngIf="question.solution === 'option2.value'">Option 2: {{ question.option2 }}</li>
+        <li *ngIf="question.solution === 'option3.value'">Option 3: {{ question.option3 }}</li>
+        <li *ngIf="question.solution === 'option4.value'">Option 4: {{ question.option4 }}</li> -->
+        <li>{{question.option2}}</li>
+        <li>{{question.solution}}</li>
+      </ul>
+    </div>
+  </div>
+  

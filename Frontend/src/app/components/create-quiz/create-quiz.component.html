@@ -1,0 +1,18 @@
+<div class="container mt-4">
+  <h2 class="text-center mb-4">Create a New Quiz</h2>
+  <form (ngSubmit)="createQuiz()" class="form-group">
+    <div class="mb-3">
+      <label for="categoryName" class="form-label">Category Name:</label>
+      <input id="categoryName" [(ngModel)]="quizDto.categoryName" name="categoryName" type="text" class="form-control" placeholder="Enter category name" required>
+    </div>
+    <div class="mb-3">
+      <label for="numQuestions" class="form-label">Number of Questions:</label>
+      <input id="numQuestions" [(ngModel)]="quizDto.numQuestions" name="numQuestions" type="number" class="form-control" placeholder="Enter number of questions" required>
+    </div>
+    <div class="mb-3">
+      <label for="title" class="form-label">Title:</label>
+      <input id="title" [(ngModel)]="quizDto.title" name="title" type="text" class="form-control" placeholder="Enter quiz title" required>
+    </div>
+    <button type="submit" class="btn btn-primary w-100">Create Quiz</button>
+  </form>
+</div>

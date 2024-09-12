@@ -1,0 +1,10 @@
+/* Add hover effect to dropdown */
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  
+  /* Optional: Adjust dropdown positioning */
+  .dropdown-menu {
+    margin-top: 0;
+  }
+  

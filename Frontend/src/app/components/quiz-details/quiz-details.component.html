@@ -1,0 +1,46 @@
+  <div *ngIf="questions.length > 0; else noQuestions">
+    <h2>Quiz Questions</h2>
+    
+    <form (ngSubmit)="submitQuiz()">
+      <div *ngFor="let question of questions; let i = index">
+        <h3>{{ question.questionTitle }}</h3>
+        <div>
+          <label>
+            <input type="radio" name="question{{i}}" [value]="question.option1" [(ngModel)]="userResponses[i]" required>
+            {{ question.option1 }}
+          </label>
+        </div>
+        <div>
+          <label>
+            <input type="radio" name="question{{i}}" [value]="question.option2" [(ngModel)]="userResponses[i]" required>
+            {{ question.option2 }}
+          </label>
+        </div>
+        <div>
+          <label>
+            <input type="radio" name="question{{i}}" [value]="question.option3" [(ngModel)]="userResponses[i]" required>
+            {{ question.option3 }}
+          </label>
+        </div>
+        <div>
+          <label>
+            <input type="radio" name="question{{i}}" [value]="question.option4" [(ngModel)]="userResponses[i]" required>
+            {{ question.option4 }}
+          </label>
+        </div>
+      </div>
+  
+      <!-- Submit Button -->
+      <button type="submit" class="btn btn-primary">Submit Quiz</button>
+    </form>
+  </div>
+  
+  <ng-template #noQuestions>
+    <h3>No questions available for this quiz.</h3>
+  </ng-template>
+  
+  <!-- Show score after submission -->
+  <div *ngIf="score !== null">
+    <h3>Your Score: {{ score }}</h3>
+  </div>
+  

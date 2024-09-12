@@ -1,0 +1,61 @@
+<div class="container mt-4">
+  <h2 class="text-center mb-4">Add a New Question</h2>
+  <form (ngSubmit)="createQuestion()" #questionForm="ngForm">
+    <div class="row">
+      <div class="col-md-6 mb-3">
+        <label for="questionTitle" class="form-label">Question Title:</label>
+        <input id="questionTitle" [(ngModel)]="question.questionTitle" name="questionTitle" type="text" class="form-control" placeholder="Enter question title" required>
+        <div *ngIf="questionForm.submitted" class="text-danger">
+          Question title is required.
+        </div>
+      </div>
+
+      <div class="col-md-6 mb-3">
+        <label for="option1" class="form-label">Option 1:</label>
+        <input id="option1" [(ngModel)]="question.option1" name="option1" type="text" class="form-control" placeholder="Enter option 1" required>
+        <div *ngIf="questionForm.submitted" class="text-danger">
+          Option 1 is required.
+        </div>
+      </div>
+
+      <div class="col-md-6 mb-3">
+        <label for="option2" class="form-label">Option 2:</label>
+        <input id="option2" [(ngModel)]="question.option2" name="option2" type="text" class="form-control" placeholder="Enter option 2" required>
+        <div *ngIf="questionForm.submitted" class="text-danger">
+          Option 2 is required.
+        </div>
+      </div>
+
+      <div class="col-md-6 mb-3">
+        <label for="option3" class="form-label">Option 3:</label>
+        <input id="option3" [(ngModel)]="question.option3" name="option3" type="text" class="form-control" placeholder="Enter option 3">
+      </div>
+
+      <div class="col-md-6 mb-3">
+        <label for="option4" class="form-label">Option 4:</label>
+        <input id="option4" [(ngModel)]="question.option4" name="option4" type="text" class="form-control" placeholder="Enter option 4">
+      </div>
+
+      <div class="col-md-6 mb-3">
+        <label for="rightAnswer" class="form-label">Right Answer:</label>
+        <input id="rightAnswer" [(ngModel)]="question.rightAnswer" name="rightAnswer" type="text" class="form-control" placeholder="Enter the correct option (e.g., 'option1')" required>
+        <div *ngIf="questionForm.submitted" class="text-danger">
+          The correct answer is required.
+        </div>
+      </div>
+
+      <div class="col-md-6 mb-3">
+        <label for="difficultylevel" class="form-label">Difficulty Level:</label>
+        <input id="difficultylevel" [(ngModel)]="question.difficultylevel" name="difficultylevel" type="text" class="form-control" placeholder="Enter difficulty level">
+      </div>
+
+      <div class="col-md-6 mb-3">
+        <label for="category" class="form-label">Category:</label>
+        <input id="category" [(ngModel)]="question.category" name="category" type="text" class="form-control" placeholder="Enter category">
+      </div>
+    </div>
+
+    <!-- Disable the button until the form is valid -->
+    <button type="submit" class="btn btn-primary w-100 mt-3" [disabled]="!questionForm.valid">Add Question</button>
+  </form>
+</div>
